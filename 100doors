@@ -1,0 +1,22 @@
+doors = [0]*100
+# [0,0,0,0,0,0,0,0,0...0]
+opened_doors = []
+for x in range (1,101):
+    #print('Go threw hall number', x)
+    for y in range (x-1,100,x):
+        #print('door position changed:', y)
+        if doors[y]== 0:
+            doors[y] = 1
+        elif doors[y]==1:
+            doors[y] = 0
+
+for i, value in enumerate(doors):
+    if value == 1:
+        opened_doors.append(i+1) # Adding finally oppened door to a list
+
+
+print("The following doors are open: ")
+for p in opened_doors:
+    print(p, end=" ")
+print("")
+#print(opened_doors)
